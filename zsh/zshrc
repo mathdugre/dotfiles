@@ -1,0 +1,60 @@
+# ZSH base configuration
+HISTFILE=~/.histfile
+HISTSIZE=4096
+SAVEHIST=4096
+setopt autocd extendedglob nomatch
+bindkey -e
+zstyle :compinstall filename '/home/math/.zshrc'
+autoload -Uz compinit && compinit
+
+# Word navigation
+bindkey "^[[1;5A" up-line
+bindkey "^[[1;5B" down-line
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey "^u" backward-kill-line
+
+# Prompt appearance
+PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{blue}%1~%f%b %# '
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%F{magenta}(%b)%r%f'
+zstyle ':vcs_info:*' enable git
+
+# SSH Keys loading
+eval $(keychain --eval --quiet --confhost \
+github \
+)
+
+# Aliases
+alias c='clear'
+
+alias l=ls
+alias la='ls -A'
+alias al='la'
+alias sl='ls'
+alias ls='ls -GFh --color=auto'
+alias ll='ls -la'
+
+alias mv='mv -i'
+alias cp='cp -i'
+alias mkdir='mkdir -pv'
+
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# PATH
+export PATH=~/bin:$PATH
+
+# ENV Variable
+export GOPATH=$HOME/go
+
+# Python
+alias py=python
+export PIP_REQUIRE_VIRTUALENV=true
+export PYVINIT="blacken-docs flake8-docstrings pytest pre-commit mypy"
+

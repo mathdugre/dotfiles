@@ -1,0 +1,37 @@
+#
+# dotsync : https://github.com/dotphiles/dotsync
+#
+# Config for dotsync
+#
+# Authors:
+#   Ben O'Hara <bohara@gmail.com>
+#
+
+# Location of your dotfiles in $HOME
+# DOTFILES=.dotfiles
+
+# dotfiles to symlink
+#
+# srcfile:dstfile
+# dstfile will be '.$srcfile' by default (with path removed)
+#
+[files]
+dotsyncrc
+code/settings.json:.config/Code/User/settings.json
+git/gitconfig:.gitconfig
+htop/htoprc:.config/htop/htoprc
+i3/i3.conf:.config/i3/config
+i3/i3status.conf:.config/i3status/config
+#ssh
+#tmux/tmux.conf
+#tmux/tmuxinator
+vim/vimrc:.vimrc
+xorg/xinitrc:.xinitrc
+xorg/Xresources:.Xresources
+zsh/zshrc:.zshrc
+[endfiles]
+
+[hosts]
+math   git=ANY
+[endhosts]
+
