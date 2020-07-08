@@ -6,10 +6,19 @@ setopt autocd extendedglob nomatch
 bindkey -e
 zstyle :compinstall filename '/home/math/.zshrc'
 autoload -Uz compinit && compinit
+export EDITOR=vim
+
+# Keybinding
+typeset -g -A key
+key[Insert]="${terminfo[kich1]}"
+key[Delete]="${terminfo[kdch1]}"
+key[Shift-Tab]="${terminfo[kcbt]}"
+# setup key accordingly
+[[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"    overwrite-mode
+[[ -n "${key[Delete]}"    ]] && bindkey -- "${key[Delete]}"    delete-char
+[[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}" reverse-menu-complete
 
 # Word navigation
-bindkey "^[[1;5A" up-line
-bindkey "^[[1;5B" down-line
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^u" backward-kill-line
@@ -25,9 +34,9 @@ zstyle ':vcs_info:git:*' formats '%F{magenta}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
 # SSH Keys loading
-eval $(keychain --eval --quiet --confhost \
-github \
-)
+#eval $(keychain --eval --quiet --confhost \
+#github \
+#)
 
 # Aliases
 alias c='clear'
