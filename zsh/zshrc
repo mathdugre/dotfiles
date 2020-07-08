@@ -34,9 +34,9 @@ zstyle ':vcs_info:git:*' formats '%F{magenta}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
 # SSH Keys loading
-#eval $(keychain --eval --quiet --confhost \
-#github \
-#)
+eval $(keychain --eval --quiet --confhost \
+github \
+)
 
 # Aliases
 alias c='clear'
