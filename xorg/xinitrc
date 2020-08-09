@@ -5,4 +5,4 @@ if [ -f $userressources ]; then
 fi
 
 exec i3
-exec conky
+
