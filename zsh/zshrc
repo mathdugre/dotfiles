@@ -38,6 +38,10 @@ eval $(keychain --eval --quiet --confhost \
 github \
 )
 
+# Basic config
+export PATH=~/bin:$PATH
+export MAKEFLAGS="-j$(nproc)"
+
 # Aliases
 alias c='clear'
 
@@ -56,14 +60,26 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# PATH
-export PATH=~/bin:$PATH
-
-# ENV Variable
+# Go
 export GOPATH=$HOME/go
 
 # Python
 alias py=python
 export PIP_REQUIRE_VIRTUALENV=true
 export PYVINIT="blacken-docs flake8-docstrings pytest pre-commit mypy"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/math/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/math/miniconda/etc/profile.d/conda.sh" ]; then
+        . "/home/math/miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/math/miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
