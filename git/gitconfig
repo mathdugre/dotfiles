@@ -3,3 +3,5 @@
 	name = mathdugre
 [core]
 	editor = vim
+[pull]
+	rebase = false
