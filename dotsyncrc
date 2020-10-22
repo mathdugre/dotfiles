@@ -28,10 +28,11 @@ i3/i3status.conf:.config/i3status/config
 vim/vimrc:.vimrc
 xorg/xinitrc:.xinitrc
 xorg/Xresources:.Xresources
+xorg/Xmodmap:.Xmodmap
 zsh/zshrc:.zshrc
 [endfiles]
 
 [hosts]
-math   git=ANY
+arch   git=ANY
 [endhosts]
 
