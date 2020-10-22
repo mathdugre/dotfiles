@@ -48,7 +48,7 @@ highlightTextColor: #314F78
 
 
 !! URvxt Appearance
-Xcursor.size: 18
+Xcursor.size: 20
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 URxvt.saveline: 2048

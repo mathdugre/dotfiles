@@ -4,7 +4,8 @@ if [ -f $userressources ]; then
 	xrdb -merge .Xresources
 fi
 
-xrandr --output DP-0.8 --mode 2560x1440 --pos 3440x0 --rotate right --output DP-0.1 --primary --mode 3440x1440 --pos 0x250 --rotate normal
+xrandr --output DP-0.8 --primary --mode 2560x1440 --pos 3440x0 --rotate right --output DP-0.1 --mode 3440x1440 --pos 0x600 --rotate normal
 feh --bg-fill -g 3440x1440 ~/.background.jpg
+xmodmap .Xmodmap
 exec i3
 
