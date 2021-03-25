@@ -53,6 +53,11 @@
   // Go
   "go.formatTool": "goreturns",
   "go.autocompleteUnimportedPackages": true,
+  // JS
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"],
   // Json
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -67,9 +72,11 @@
     "**/.direnv/**": true,
     "**/.venv/**": true
   },
-  "python.dataScience.variableQueries": [
-  
+  "extensions.ignoreRecommendations": true,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
   ],
-  "python.dataScience.askForKernelRestart": false,
-  "extensions.ignoreRecommendations": true
 }

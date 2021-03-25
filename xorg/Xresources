@@ -1,5 +1,8 @@
-!! Colorscheme
+URxvt.perl-ext-common: resize-font
+URxvt.iso14755:	false
+URxvt.iso14755_52: false
 
+!! Colorscheme
 ! special
 *.foreground: #C8C8C8
 *.background: #282C34
@@ -48,7 +51,7 @@ highlightTextColor: #314F78
 
 
 !! URvxt Appearance
-Xcursor.size: 20
+Xcursor.size: 32
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 URxvt.saveline: 2048
@@ -56,7 +59,6 @@ URxvt*scrollBar: false
 URxvt.urgentOnBell: true
 
 !! Copy & Paste
-URxvt.iso14755:			false
 URxvt.keysym.Shift-Control-V:	eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: 	eval:selection_to_clipboard
 
