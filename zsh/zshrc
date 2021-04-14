@@ -5,6 +5,7 @@ SAVEHIST=4096
 setopt autocd extendedglob nomatch
 bindkey -e
 zstyle :compinstall filename '/home/math/.zshrc'
+fpath+=/home/math/miniconda3/conda-zsh-completion
 autoload -Uz compinit && compinit
 export EDITOR=code
 stty -ixon  # Allows backward cycling in reverse-search.
@@ -25,7 +26,7 @@ bindkey "^F" forward-word
 bindkey "^u" backward-kill-line
 
 # Prompt appearance
-PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{blue}%1~%f%b %# '
+PROMPT='%n@%m %(?.%F{green}√.%F{red}?%?)%f %B%F{blue}%1~%f%b %# '
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
@@ -60,6 +61,7 @@ alias grep='grep --color=auto'
 
 # Go
 export GOPATH=$HOME/go
+export PATH=~/go/bin:$PATH
 
 # Python
 alias py=python
@@ -68,4 +70,20 @@ export PYVINIT="blacken-docs flake8-docstrings pytest pre-commit mypy"
 
 # NPM
 export PATH=~/.npm-global/bin/:$PATH
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/math/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/math/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/math/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/math/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+export TERMINFO=/usr/share/terminfo
 

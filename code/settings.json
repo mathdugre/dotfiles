@@ -79,4 +79,5 @@
       "filenamePattern": "*.ipynb"
     }
   ],
+  "go.lintTool": "golangci-lint",
 }

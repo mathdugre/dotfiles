@@ -4,7 +4,7 @@ if [ -f $userressources ]; then
 	xrdb -merge .Xresources
 fi
 
-xrandr --output HDMI-0 --mode 3440x1440 --pos 0x540 --rotate normal --output DP-0.8 --primary --mode 2560x1440 --pos 3440x0 --rotate right
+sh .screenlayout/dual_monitor.sh
 feh --bg-fill -g 3440x1440 ~/.background.jpg
 xmodmap .Xmodmap
 xinput set-prop pointer:"Logitech Wireless Mouse MX Master 3"  "Coordinate Transformation Matrix" 2.5 0 0 0 2.5 0 0 0 1
