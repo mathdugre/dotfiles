@@ -9,14 +9,16 @@
   // Editor :: Appearance
   "workbench.colorTheme": "One Dark Pro",
   "editor.minimap.enabled": false,
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.renderWhitespace": "all",
   "editor.fontSize": 18,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 15,
   "[Log]": {
-    "editor.fontSize": 15
+    "editor.fontSize": 14
   },
   "workbench.sideBar.location": "right",
   "workbench.colorCustomizations": {
@@ -31,18 +33,24 @@
   "editor.formatOnType": true,
   //Git
   "[git]": {
-    "editor.rulers": [50]
+    "editor.rulers": [
+      50
+    ]
   },
   // Python
   "[python]": {
-    "editor.rulers": [88]
+    "editor.rulers": [
+      88
+    ]
   },
   "python.autoComplete.addBrackets": true,
   "python.testing.pytestEnabled": true,
   "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
   "python.linting.pydocstyleEnabled": true,
-  "python.linting.flake8Args": ["--docstring-convention numpy"],
+  "python.linting.flake8Args": [
+    "--docstring-convention numpy"
+  ],
   "autoDocstring.docstringFormat": "numpy",
   "python.linting.pylintEnabled": false,
   "python.linting.mypyEnabled": true,
@@ -52,11 +60,14 @@
   // Go
   "go.formatTool": "goreturns",
   "go.autocompleteUnimportedPackages": true,
+  "go.lintTool": "golangci-lint",
   // JS
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.validate": ["javascript"],
+  "eslint.validate": [
+    "javascript"
+  ],
   // Json
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -64,6 +75,7 @@
   // Latex
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.docker.enabled": true,
+  "latex-workshop.docker.image.latex": "tianon/latex",
   // Other
   "files.watcherExclude": {
     "**/.git/**": true,
@@ -72,11 +84,18 @@
     "**/.venv/**": true
   },
   "extensions.ignoreRecommendations": true,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
-  "go.lintTool": "golangci-lint",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  },
 }
