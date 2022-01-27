@@ -4,9 +4,9 @@ if [ -f $userressources ]; then
 	xrdb -merge .Xresources
 fi
 
-sh .screenlayout/triple_monitor.sh
+sh .config/screenlayout/triple_monitor.sh
+sh .config/wacom/setup.sh
 feh --bg-fill -g 3440x1440 ~/.background.jpg
 xmodmap .Xmodmap
-xinput set-prop pointer:"Logitech Wireless Mouse MX Master 3"  "Coordinate Transformation Matrix" 2.5 0 0 0 2.5 0 0 0 1
 exec i3
 

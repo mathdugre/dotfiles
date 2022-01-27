@@ -50,7 +50,7 @@ alias c='clear'
 
 alias l=ls
 alias sl='ls'
-alias ls='ls -GFh --color=auto'
+alias ls='ls -Fh --color=auto'
 alias la='ls -a'
 alias ll='ls -la'
 
@@ -59,6 +59,25 @@ alias cp='cp -i'
 alias mkdir='mkdir -pv'
 
 alias grep='grep --color=auto'
+
+# Functions
+lb-eosr6() {
+    screen -S lb-eosr6 -dm bash -c \
+    'gphoto2 --set-config-value whitebalance="Auto" && \
+    gphoto2 --stdout --capture-movie | \
+    ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4 \
+    -nostdin -loglevel panic 2> /dev/null&'
+}
+lb-eosr6-kill() {
+    screen -XS lb-eosr6 quit
+}
+lb-streamcam(){
+    screen -S lb-streamcam -dm bash -c \
+    'ffmpeg -f v4l2 -c:v mjpeg -r 60 -video_size 1920x1080 -i /dev/video0 -pix_fmt yuyv422 -f v4l2 /dev/video3'
+}
+lb-streamcam-kill(){
+    screen -XS lb-streamcam quit
+}
 
 # Go
 export GOPATH=$HOME/go
