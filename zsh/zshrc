@@ -65,8 +65,7 @@ lb-eosr6() {
     screen -S lb-eosr6 -dm bash -c \
     'gphoto2 --set-config-value whitebalance="Auto" && \
     gphoto2 --stdout --capture-movie | \
-    ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4 \
-    -nostdin -loglevel panic 2> /dev/null&'
+    ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
 }
 lb-eosr6-kill() {
     screen -XS lb-eosr6 quit
